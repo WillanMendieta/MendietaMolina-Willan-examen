@@ -37,27 +37,45 @@
 
                         <table id="tablaUsuarios" style="width:50%">
                         <tr>
-                        <th>Nombres</th>
-                        <th>ISBN</th>
-                        <th>Numeros de pagina</th>
+                        <th>Numero de capitulo</th>
+                        <th>Titulo</th>
+                        <th>Nombre Autor</th>
+                        <th>Nombre Nacionalidad</th>
+                        <th> </th>
                         </tr>
 
                         <?php
                         include '../../config/conexionBD.php'; 
-                        $sql = "SELECT * FROM libro";
+                        $sql = "SELECT * FROM capitulos";
                         $result = $conn->query($sql);
+
                         
                         if ($result->num_rows > 0) {
                         
                             while($row = $result->fetch_assoc()) {
                                 echo "<tr>";
 
-                                echo " <td>" . $row['lib_nombre'] ."</td>";
-                                echo " <td>" . $row['lib_isbn'] . "</td>";
-                                echo " <td>" . $row['lib_numPa'] . "</td>";
-                                echo " <td> <a href='capitulos.php?codigo=" . $row['lib_id'] . "'>Capitulos</a> </td>";
+                                echo " <td>" . $row['cap_numero'] ."</td>";
+                                echo " <td>" . $row['cap_titulo'] . "</td>";
+                                
+                               $sql2 = "SELECT * FROM autor where au_id =". $row['cap_autor']." ";
+                                  $result2 = $conn->query($sql2);
+
+                                    if ($result2->num_rows > 0) {
+                                      while($row2 = $result2->fetch_assoc()) {
+                                       
+                                        echo " <td>" . $row2['au_nombre'] ."</td>";
+                                        echo " <td>" . $row2['au_nacionalidad'] ."</td>";
+                                 
+                                        }
+                                     }
+
+                                echo " <td> <a href='Acapitulos.php?codigo=" . $row['cap_libro'] . "'>Agregar Capitulos</a> </td>";
+
+
                                 echo "</tr>";
                             }
+
                             
                         } else {
                         echo "<tr>";
@@ -65,6 +83,8 @@
                         echo "</tr>";
                         }
                         #echo " <td> <a href='../../../config/cerrar_sesion.php'>Cerrar Sesion</a> </td>";
+
+                        
 
                         $conn->close();
                         ?>
@@ -75,7 +95,7 @@
         <footer id="Pie">
         Integrantes:Willan Mendieta  Correo:<a href="mailto: wmendietam@est.ups.edu.ec">wmendietam@est.ups.edu.ec</a> tel: <a href="tel: 0980158835 "> 0998113193 </a></p>
             <div id="copyright">Copyright&copy; 2021 - Página creada por Willan Mendieta - Todos los derechos reservados</div>
-        
+         
          </footer>
 		</body>
 </html>

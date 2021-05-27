@@ -1,0 +1,139 @@
+#logo {
+    float: left;
+    width: 18%;
+    margin-top: 1%;
+}
+
+#navUsuariosAdmi{
+    float: left;
+    margin-top: 2%;
+    width: 60%;
+}
+
+#navUsuariosAdmi li{
+    float: left;
+    width: 20%;
+    text-align-last: center;
+    font-size: 180%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    margin: 0;
+   }
+    #navUsuariosAdmi li a:hover {
+        width: 100%;
+        padding: 1% 1%;
+        display: block;
+        
+  }  
+
+*{
+    margin: 0;
+    padding: 0; 
+    border: black solid;
+}
+h1{
+    margin-left: 8%;
+    margin-top: 3%;
+}
+
+
+
+#navUsuariosAdmi{
+    float: left;
+    height: max-content;
+    margin-left: 8%;
+}
+
+
+
+#BloqueDeBajoMenu{
+    float: left;
+    margin-top: 3%;
+    margin-left: 55%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    width: 60%;
+    background-color: rgba(62, 143, 190, 0.767);
+}
+
+#BloqueDeBajoMenu{
+    float: left;
+    height: max-content;
+    margin: 0%;
+    padding: 0%;
+    margin-left: 20%;
+}
+
+#BloqueDeBajoMenuL{
+    float: left;
+    margin-top: 3%;
+    margin-left: 55%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    width: 60%;
+
+}
+
+#BloqueDeBajoMenuL{
+    float: left;
+    height: max-content;
+    margin: 0%;
+    padding: 0%;
+    margin-left: 20%;
+}
+
+#BloqueDeBajoMenuC{
+    float: left;
+    margin-left: 25%;
+    background-color: rgba(62, 143, 190, 0.767);
+    width: 50%;
+    font-size: 200%;
+}
+
+#formulario01{
+    float: left;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+#Pie{
+    float: left;
+    width: 100%;
+}
+
+footer{
+    text-align:unset;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-right: 3%;
+    text-align: center ;
+    float: left;
+
+}
+
+input{
+    width: 50%;
+    height: 50%;
+    font-size:70%;
+    margin-left: 2%;
+}
+#boton_aceptar{
+    margin-top: 2%;
+    float: left;
+    margin-left: 0%;
+    font-size:100%;
+}
+#boton_cancelar{
+    margin-top: -3.2%;
+    float: left;
+    margin-left: 50%;
+    font-size:100%;
+}
+
+#tablaUsuarios{
+    float: left;
+    font-size:59%;
+    margin: 0%;
+    padding: 0%;
+}
