@@ -12,7 +12,7 @@
 
     <link href="../../config/css/index.css"  rel="stylesheet"/>
     <link href="../../config/css/textos.css" rel="stylesheet"/>
-    <script type="text/javascript" src="../../../config/validaciones.js"></script>
+    <script type="text/javascript" src="../../config/validaciones.js"></script>
     <script type="text/javascript" src="buscarA.js"></script>
 
 	<head>
@@ -41,17 +41,17 @@
                     <form id="formulario01" method="POST" action="../controladores/registrarLibro.php" onkeyup="return validarCamposObligatorios(this)">
                     
                     <label for="nombres">Nombres (*)</label>
-                    <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese el nombre del libro ..." onkeyup="return validarLetras(this) "required/>
+                    <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese el nombre del libro ..." required/>
                     <span id="mensajeNombres" class="error"></span>
                     <br>
                     
                     <label for="isbn">ISBN (*)</label>
-                    <input type="text" id="isbn" name="isbn" value="" placeholder="Ingrese el isbn ..." onkeyup="return validarISBN(this) "required/>
+                    <input type="text" id="isbn" name="isbn" value="" placeholder="Ingrese el isbn ..."required/>
                     <span id="mensajeisbn" class="error"></span>
                     <br>
 
                     <label for="numbpa">numero de paguinas (*)</label>
-                    <input type="text" id="numbpa" name="numbpa" value="" placeholder="Ingrese su numero de paguinas ..."required/>
+                    <input type="text" id="numbpa" name="numbpa" value="" placeholder="Ingrese su numero de paguinas ..." onkeyup="return validarNumeros(this) " required/>
                     <br>
 
                     <label for="Ncapitulo">Numero de Capitulo (*)</label>
@@ -63,23 +63,25 @@
                     <br>
 
                     <label for="autor">Selecione un autor(*)</label>
-                        <select id="select" name="select" onsubmit="buscarAutor()"  >
+                        <select id="select" name="select" oninput="buscarAutor()"  >
                         <option  value="" selected>Seleccione un autor</option>
-                        <option    value="WILLAN STEVEN MENDIETA MOLINA">WILLAN STEVEN MENDIETA MOLINA</option>
-                        <option   value="ANGEL WILFRIDO MENDIETA PRIETO">ANGEL WILFRIDO MENDIETA PRIETO</option>
-                        <option   value="CHISTIAN PAUL MENDIETA MOLINA">CHISTIAN PAUL MENDIETA MOLINA</option>
-                        <option   value="CHISTIAN PAUL MENDIETA MOLINA2">CHISTIAN PAUL MENDIETA MOLINA2</option>
-                        <option   value="YHOSELYN JESSENIA MENDIETA MOLINA">YHOSELYN JESSENIA MENDIETA MOLINA</option>
-                        <option  value="YHOSELYN JESSENIA MENDIETA MOLINA2">YHOSELYN JESSENIA MENDIETA MOLINA2</option>
+                        <option    value="WILLAN STEVEN MENDIETA">WILLAN STEVEN MENDIETA</option>
+                        <option   value="ANGEL WILFRIDO MENDIETA">ANGEL WILFRIDO MENDIETA</option>
+                        <option   value="CHISTIAN PAUL MENDIETA">CHISTIAN PAUL MENDIETA</option>
+                        <option   value="CHISTIAN PAUL MENDIETA1">CHISTIAN PAUL MENDIETA1</option>
+                        <option   value="YHOSELYN JESSENIA">YHOSELYN JESSENIA</option>
+                        <option  value="YHOSELYN JESSENIA MENDIET">YHOSELYN JESSENIA MENDIET</option>
                          </select>
+                         
+                 <input id="boton_aceptar" type="submit" id="crear" name="crear" value="Agregar libro" />
+                    <input id="boton_cancelar" type="reset" id="cancelar" name="cancelar" value="Cancelar" />
 
                         <article id="BloqueDeBajoMenuC">
                         <div id="informacion"><b></b></div>
                         <form id= "busquedaCE" oninput="return buscarAutor()">
                            </form>
                         </article>
-                    <input id="boton_aceptar" type="submit" id="crear" name="crear" value="Agregar libro" />
-                    <input id="boton_cancelar" type="reset" id="cancelar" name="cancelar" value="Cancelar" />
+
 </section>
         <footer id="Pie">
             Integrantes:Willan Mendieta  Correo:<a href="mailto: wmendietam@est.ups.edu.ec">wmendietam@est.ups.edu.ec</a> tel: <a href="tel: 0980158835 "> 0998113193 </a></p>

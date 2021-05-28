@@ -49,17 +49,31 @@
                     <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>" />
 
                     <label for="Ncapitulo">Numero de Capitulo (*)</label>
-                    <input type="text" id="Ncapitulo" name="Ncapitulo" value="" placeholder="Ingrese el numero del capitulo ..." required/>
+                    <input type="text" id="Ncapitulo" name="Ncapitulo" value="" placeholder="Ingrese el numero del capitulo ..."  required/>
                     <br>
 
                     <label for="titulo">Ingrese el titulo (*)</label>
                     <input type="text" id="titulo" name="titulo" value="" placeholder="Ingrese su numero de titulo ..."required/>
                     <br>
-
-
-                    <input id="boton_aceptar" type="submit" id="crear" name="crear" value="Agregar libro" />
+                    <label for="autor">Selecione un autor(*)</label>
+                        <select id="select" name="select" oninput="buscarAutor()"  >
+                        <option  value="" selected>Seleccione un autor</option>
+                        <option    value="WILLAN STEVEN MENDIETA">WILLAN STEVEN MENDIETA</option>
+                        <option   value="ANGEL WILFRIDO MENDIETA">ANGEL WILFRIDO MENDIETA</option>
+                        <option   value="CHISTIAN PAUL MENDIETA">CHISTIAN PAUL MENDIETA</option>
+                        <option   value="CHISTIAN PAUL MENDIETA1">CHISTIAN PAUL MENDIETA1</option>
+                        <option   value="YHOSELYN JESSENIA">YHOSELYN JESSENIA</option>
+                        <option  value="YHOSELYN JESSENIA MENDIET">YHOSELYN JESSENIA MENDIET</option>
+                         </select>
+                         
+                 <input id="boton_aceptar" type="submit" id="crear" name="crear" value="Agregar libro" />
                     <input id="boton_cancelar" type="reset" id="cancelar" name="cancelar" value="Cancelar" />
 
+                        <article id="BloqueDeBajoMenuC">
+                        <div id="informacion"><b></b></div>
+                        <form id= "busquedaCE" oninput="return buscarAutor()">
+                           </form>
+                        </article>
 
                 </section>
 

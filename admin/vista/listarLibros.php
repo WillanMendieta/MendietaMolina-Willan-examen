@@ -81,7 +81,7 @@
                                                 echo " <td>" . $row2['au_nombre'] ."</td>";
                                                 echo " <td>" . $row2['au_nacionalidad'] ."</td>";
                                                 }
-                                            }echo "<td> <a href='Acapitulos.php?codigoT=" . $row3['cap_libro'] . "'>Agregar Capitulos</a> </td>";
+                                            }#echo "<td> <a href='Acapitulos.php?codigoT=" . $row3['cap_libro'] . "'>Agregar Capitulos</a> </td>";
                                         echo "</tr>";
                                         echo " <td></td>";
                                         echo " <td></td>";
