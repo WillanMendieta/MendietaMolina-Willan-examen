@@ -13,6 +13,7 @@
     <link href="../../config/css/index.css"  rel="stylesheet"/>
     <link href="../../config/css/textos.css" rel="stylesheet"/>
     <script type="text/javascript" src="../../../config/validaciones.js"></script>
+    <script type="text/javascript" src="buscarA.js"></script>
 
 	<head>
 
@@ -40,7 +41,7 @@
                     <form id="formulario01" method="POST" action="../controladores/registrarLibro.php" onkeyup="return validarCamposObligatorios(this)">
                     
                     <label for="nombres">Nombres (*)</label>
-                    <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese sus dos nombres ..." onkeyup="return validarLetras(this) "required/>
+                    <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese el nombre del libro ..." onkeyup="return validarLetras(this) "required/>
                     <span id="mensajeNombres" class="error"></span>
                     <br>
                     
@@ -61,21 +62,25 @@
                     <input type="text" id="titulo" name="titulo" value="" placeholder="Ingrese su numero de titulo ..."required/>
                     <br>
 
-                    <label for="rol">Selecione un autor(*)</label>
-                    <select id="select" name="select" onsubmit="rol()">
-                        <option value="1" selected>Seleccione un rol</option>
-                        <option value="A">Admin</option>
-                        <option value="U">Usuario</option>
-                    </select>
-                    <span id="mensajeRol" class="error"></span>
-                    <br>
+                    <label for="autor">Selecione un autor(*)</label>
+                        <select id="select" name="select" onsubmit="buscarAutor()"  >
+                        <option  value="" selected>Seleccione un autor</option>
+                        <option    value="WILLAN STEVEN MENDIETA MOLINA">WILLAN STEVEN MENDIETA MOLINA</option>
+                        <option   value="ANGEL WILFRIDO MENDIETA PRIETO">ANGEL WILFRIDO MENDIETA PRIETO</option>
+                        <option   value="CHISTIAN PAUL MENDIETA MOLINA">CHISTIAN PAUL MENDIETA MOLINA</option>
+                        <option   value="CHISTIAN PAUL MENDIETA MOLINA2">CHISTIAN PAUL MENDIETA MOLINA2</option>
+                        <option   value="YHOSELYN JESSENIA MENDIETA MOLINA">YHOSELYN JESSENIA MENDIETA MOLINA</option>
+                        <option  value="YHOSELYN JESSENIA MENDIETA MOLINA2">YHOSELYN JESSENIA MENDIETA MOLINA2</option>
+                         </select>
 
+                        <article id="BloqueDeBajoMenuC">
+                        <div id="informacion"><b></b></div>
+                        <form id= "busquedaCE" oninput="return buscarAutor()">
+                           </form>
+                        </article>
                     <input id="boton_aceptar" type="submit" id="crear" name="crear" value="Agregar libro" />
                     <input id="boton_cancelar" type="reset" id="cancelar" name="cancelar" value="Cancelar" />
-
-
-                </section>
-
+</section>
         <footer id="Pie">
             Integrantes:Willan Mendieta  Correo:<a href="mailto: wmendietam@est.ups.edu.ec">wmendietam@est.ups.edu.ec</a> tel: <a href="tel: 0980158835 "> 0998113193 </a></p>
             <div id="copyright">Copyright&copy; 2021 - Página creada por Willan Mendieta - Todos los derechos reservados</div>
@@ -83,3 +88,10 @@
          </footer>
 		</body>
 </html>
+
+
+
+
+
+
+

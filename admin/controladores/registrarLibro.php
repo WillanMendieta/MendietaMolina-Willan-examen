@@ -24,8 +24,8 @@
  $nombre = isset($_POST["nombres"]) ? mb_strtoupper(trim($_POST["nombres"]), 'UTF-8') : null;
  $isbn = isset($_POST["isbn"]) ? mb_strtoupper(trim($_POST["isbn"]), 'UTF-8') : null;
  $numbpa = isset($_POST["numbpa"]) ? mb_strtoupper(trim($_POST["numbpa"]), 'UTF-8') : null;
-
-
+ $autor = $_POST["select"];
+ 
  //$rol = $_POST["select"];
  $sql = "INSERT INTO libro VALUES (0, '$nombre', '$isbn', '$numbpa')"; 
 
@@ -38,11 +38,17 @@
                     $id=$row['lib_id'];
                 }
 
+                $idAu= "SELECT *  FROM autor where au_nombre=".$autor."";
+                $resultId2 = $conn->query($idAu);
+                while($row2=$resultId2->fetch_assoc()){
+                    $id2=$row2['au_id'];
+                }
+
                 $Ncapitulo = isset($_POST["Ncapitulo"]) ? trim($_POST["Ncapitulo"]) : null;
                 $titulo = isset($_POST["titulo"]) ? mb_strtoupper(trim($_POST["titulo"]), 'UTF-8') : null;
 
 
-                $sql2 = "INSERT INTO capitulos VALUES (0, '$Ncapitulo', '$titulo', 4, $id)"; 
+                $sql2 = "INSERT INTO capitulos VALUES (0, '$Ncapitulo', '$titulo', $id2, $id)"; 
                 
                                 if ($conn->query($sql2) === TRUE) {
                                     echo "<p>Se ha creado el telefono correctamemte!!!</p>"; 
