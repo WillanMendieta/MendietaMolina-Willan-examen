@@ -32,6 +32,8 @@
                 </ul> 
             </nav>
         </header>
+
+      
           
 		<body>
             <section>
@@ -39,8 +41,10 @@
                 <article id="BloqueDeBajoMenu">
 
                 <?php
-                    $codigo = $_GET["cap_libro"];
+                    $codigo = $_GET["codigoT"]
+                    
                     ?>
+
                     <form id="formulario01" method="POST" action="../controladores/Acapitulos.php" onkeyup="return validarCamposObligatorios(this)">
                     <input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>" />
 

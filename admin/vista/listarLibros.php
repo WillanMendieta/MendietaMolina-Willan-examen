@@ -25,7 +25,7 @@
             <ul id="navUsuariosAdmi"> 
                 <li><a href="registrarLibro.php">Agregar libro</a></li> 
                 <li><a href="listarLibros.php">Listar libros</a></li> 
-                <li><a href="listarLibros2.php">Buscar libro</a></li>  
+                <li><a href="buscar.html">Buscar libro</a></li>  
                 </ul> 
             </nav>
         </header>
@@ -37,9 +37,14 @@
 
                         <table id="tablaUsuarios" style="width:50%">
                         <tr>
-                        <th>Nombres</th>
+                        <th>Nombre del libro</th>
                         <th>ISBN</th>
                         <th>Numeros de pagina</th>
+                        <th>Numero de capitulo</th>
+                        <th>Titulo del capitulo </th>
+                        <th>Nombre Autor</th>
+                        <th>Nombre Nacionalidad</th>
+                        <th></th>
                         </tr>
 
                         <?php
@@ -55,7 +60,38 @@
                                 echo " <td>" . $row['lib_nombre'] ."</td>";
                                 echo " <td>" . $row['lib_isbn'] . "</td>";
                                 echo " <td>" . $row['lib_numPa'] . "</td>";
-                                echo " <td> <a href='capitulos.php?codigo=" . $row['lib_id'] . "'>Capitulos</a> </td>";
+                               
+                                #echo " <td> <a href='capitulos.php?codigo=" . $row['lib_id'] . "'>Capitulos</a> </td>";
+                                $sql3 = "SELECT * FROM capitulos where cap_libro =". $row['lib_id']." ";
+                                $result3 = $conn->query($sql3);
+                                if ($result3->num_rows > 0) {
+                                   
+                                    while($row3 = $result3->fetch_assoc()) {
+                                      
+                                      
+                                        echo " <td>" . $row3['cap_numero'] ."</td>";
+                                        echo " <td>" . $row3['cap_titulo'] . "</td>";
+                                        
+                                       $sql2 = "SELECT * FROM autor where au_id =". $row3['cap_autor']." ";
+                                          $result2 = $conn->query($sql2);
+        
+                                            if ($result2->num_rows > 0) {
+                                              while($row2 = $result2->fetch_assoc()) {
+                                               
+                                                echo " <td>" . $row2['au_nombre'] ."</td>";
+                                                echo " <td>" . $row2['au_nacionalidad'] ."</td>";
+                                                }
+                                            }echo "<td> <a href='Acapitulos.php?codigoT=" . $row3['cap_libro'] . "'>Agregar Capitulos</a> </td>";
+                                        echo "</tr>";
+                                        echo " <td></td>";
+                                        echo " <td></td>";
+                                        echo " <td></td>";
+                                        
+                                    }
+        
+                                    
+                                }
+                                
                                 echo "</tr>";
                             }
                             

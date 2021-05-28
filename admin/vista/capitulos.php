@@ -46,17 +46,17 @@
 
                         <?php
                         include '../../config/conexionBD.php'; 
-                        $sql = "SELECT * FROM capitulos";
-                        $result = $conn->query($sql);
+                        $sql3 = "SELECT * FROM capitulos";
+                        $result3 = $conn->query($sql3);
 
                         
-                        if ($result->num_rows > 0) {
+                        if ($result3->num_rows > 0) {
                         
-                            while($row = $result->fetch_assoc()) {
+                            while($row3 = $result3->fetch_assoc()) {
                                 echo "<tr>";
 
-                                echo " <td>" . $row['cap_numero'] ."</td>";
-                                echo " <td>" . $row['cap_titulo'] . "</td>";
+                                echo " <td>" . $row3['cap_numero'] ."</td>";
+                                echo " <td>" . $row3['cap_titulo'] . "</td>";
                                 
                                $sql2 = "SELECT * FROM autor where au_id =". $row['cap_autor']." ";
                                   $result2 = $conn->query($sql2);
@@ -66,13 +66,9 @@
                                        
                                         echo " <td>" . $row2['au_nombre'] ."</td>";
                                         echo " <td>" . $row2['au_nacionalidad'] ."</td>";
-                                 
+                                        echo "<td> <a href='Acapitulos.php?codigoT=" . $row3['cap_libro'] . "'>Agregar Capitulos</a> </td>";
                                         }
-                                     }
-
-                                echo " <td> <a href='Acapitulos.php?codigo=" . $row['cap_libro'] . "'>Agregar Capitulos</a> </td>";
-
-
+                                    }
                                 echo "</tr>";
                             }
 

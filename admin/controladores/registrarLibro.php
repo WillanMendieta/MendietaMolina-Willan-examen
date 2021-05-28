@@ -42,7 +42,7 @@
                 $titulo = isset($_POST["titulo"]) ? mb_strtoupper(trim($_POST["titulo"]), 'UTF-8') : null;
 
 
-                $sql2 = "INSERT INTO capitulos VALUES (0, '$Ncapitulo', '$titulo', 1, $id)"; 
+                $sql2 = "INSERT INTO capitulos VALUES (0, '$Ncapitulo', '$titulo', 4, $id)"; 
                 
                                 if ($conn->query($sql2) === TRUE) {
                                     echo "<p>Se ha creado el telefono correctamemte!!!</p>"; 

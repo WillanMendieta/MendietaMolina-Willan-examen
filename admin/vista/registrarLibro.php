@@ -28,7 +28,7 @@
                 <ul id="navUsuariosAdmi"> 
                 <li><a href="registrarLibro.php">Agregar libro</a></li> 
                 <li><a href="listarLibros.php">Listar libros</a></li> 
-                <li><a href="listar_usuarioA.php">Buscar libro</a></li>  
+                <li><a href="buscar.html">Buscar libro</a></li>  
                 </ul> 
             </nav>
         </header>
