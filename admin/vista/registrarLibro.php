@@ -23,7 +23,6 @@
         <header>
         <a href= "registrarLibro.php"> <img id="logo" src="../../config/imagenes/fondo.png"/></a>
             <h1>Libreria</h1>
-
             </nav>
             <nav> 
                 <ul id="navUsuariosAdmi"> 
